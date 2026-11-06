@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1">
+
+<title>Energieprijs V5</title>
+
+<link rel="stylesheet"
+      href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>⚡ Energieprijs V5</h1>
+
+</header>
+
+<nav>
+
+<button class="tab active"
+        data-tab="dashboard">
+
+Dashboard
+
+</button>
+
+<button class="tab"
+        data-tab="today">
+
+Vandaag
+
+</button>
+
+<button class="tab"
+        data-tab="graph">
+
+Grafiek
+
+</button>
+
+<button class="tab"
+        data-tab="tomorrow">
+
+Morgen
+
+</button>
+
+</nav>
+
+<section
+id="dashboard"
+class="page active">
+
+<div id="dashboard-content"></div>
+
+</section>
+
+<section
+id="today"
+class="page">
+
+<table id="today-table">
+
+<thead>
+
+<tr>
+
+<th>Tijd</th>
+<th>Spotprijs</th>
+<th>Werkelijke prijs</th>
+
+</tr>
+
+</thead>
+
+<tbody></tbody>
+
+</table>
+
+</section>
+
+<section
+id="graph"
+class="page">
+
+<canvas
+id="priceChart"
+height="300">
+</canvas>
+
+</section>
+
+<section
+id="tomorrow"
+class="page">
+
+<div id="tomorrow-content"></div>
+
+</section>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>

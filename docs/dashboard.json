@@ -1,0 +1,511 @@
+{
+  "current_price": 0.33361,
+  "cheapest_quarter_today": {
+    "time": "05:30",
+    "spot_price": 0.19144,
+    "total_price": 0.31996
+  },
+  "cheapest_hour_today": {
+    "hour": "05:00",
+    "price": 0.32654
+  },
+  "cheapest_hour_tomorrow": null,
+  "best_2h_window": {
+    "from": "00:00",
+    "to": "02:00",
+    "average": 0.32972
+  },
+  "best_4h_window": {
+    "from": "00:00",
+    "to": "04:00",
+    "average": 0.33236
+  },
+  "best_6h_window": {
+    "from": "00:00",
+    "to": "06:00",
+    "average": 0.33209
+  },
+  "today": [
+    {
+      "time": "00:00",
+      "spot_price": 0.2036,
+      "total_price": 0.33335
+    },
+    {
+      "time": "00:15",
+      "spot_price": 0.2,
+      "total_price": 0.32938
+    },
+    {
+      "time": "00:30",
+      "spot_price": 0.19526,
+      "total_price": 0.32416
+    },
+    {
+      "time": "00:45",
+      "spot_price": 0.19317,
+      "total_price": 0.32186
+    },
+    {
+      "time": "01:00",
+      "spot_price": 0.1966,
+      "total_price": 0.32564
+    },
+    {
+      "time": "01:15",
+      "spot_price": 0.20209,
+      "total_price": 0.33169
+    },
+    {
+      "time": "01:30",
+      "spot_price": 0.20437,
+      "total_price": 0.3342
+    },
+    {
+      "time": "01:45",
+      "spot_price": 0.20735,
+      "total_price": 0.33748
+    },
+    {
+      "time": "02:00",
+      "spot_price": 0.20881,
+      "total_price": 0.33909
+    },
+    {
+      "time": "02:15",
+      "spot_price": 0.20704,
+      "total_price": 0.33714
+    },
+    {
+      "time": "02:30",
+      "spot_price": 0.2036,
+      "total_price": 0.33335
+    },
+    {
+      "time": "02:45",
+      "spot_price": 0.20511,
+      "total_price": 0.33501
+    },
+    {
+      "time": "03:00",
+      "spot_price": 0.20594,
+      "total_price": 0.33593
+    },
+    {
+      "time": "03:15",
+      "spot_price": 0.20374,
+      "total_price": 0.3335
+    },
+    {
+      "time": "03:30",
+      "spot_price": 0.20451,
+      "total_price": 0.33435
+    },
+    {
+      "time": "03:45",
+      "spot_price": 0.20201,
+      "total_price": 0.3316
+    },
+    {
+      "time": "04:00",
+      "spot_price": 0.20551,
+      "total_price": 0.33545
+    },
+    {
+      "time": "04:15",
+      "spot_price": 0.20656,
+      "total_price": 0.33661
+    },
+    {
+      "time": "04:30",
+      "spot_price": 0.20811,
+      "total_price": 0.33832
+    },
+    {
+      "time": "04:45",
+      "spot_price": 0.20603,
+      "total_price": 0.33603
+    },
+    {
+      "time": "05:00",
+      "spot_price": 0.19992,
+      "total_price": 0.3293
+    },
+    {
+      "time": "05:15",
+      "spot_price": 0.20329,
+      "total_price": 0.33301
+    },
+    {
+      "time": "05:30",
+      "spot_price": 0.19144,
+      "total_price": 0.31996
+    },
+    {
+      "time": "05:45",
+      "spot_price": 0.19499,
+      "total_price": 0.32387
+    },
+    {
+      "time": "06:00",
+      "spot_price": 0.20384,
+      "total_price": 0.33361
+    },
+    {
+      "time": "06:15",
+      "spot_price": 0.2422,
+      "total_price": 0.37586
+    },
+    {
+      "time": "06:30",
+      "spot_price": 0.25,
+      "total_price": 0.38445
+    },
+    {
+      "time": "06:45",
+      "spot_price": 0.25728,
+      "total_price": 0.39247
+    },
+    {
+      "time": "07:00",
+      "spot_price": 0.27969,
+      "total_price": 0.41715
+    },
+    {
+      "time": "07:15",
+      "spot_price": 0.29214,
+      "total_price": 0.43086
+    },
+    {
+      "time": "07:30",
+      "spot_price": 0.29777,
+      "total_price": 0.43706
+    },
+    {
+      "time": "07:45",
+      "spot_price": 0.29866,
+      "total_price": 0.43804
+    },
+    {
+      "time": "08:00",
+      "spot_price": 0.31391,
+      "total_price": 0.45484
+    },
+    {
+      "time": "08:15",
+      "spot_price": 0.2975,
+      "total_price": 0.43677
+    },
+    {
+      "time": "08:30",
+      "spot_price": 0.29069,
+      "total_price": 0.42927
+    },
+    {
+      "time": "08:45",
+      "spot_price": 0.28062,
+      "total_price": 0.41817
+    },
+    {
+      "time": "09:00",
+      "spot_price": 0.28602,
+      "total_price": 0.42412
+    },
+    {
+      "time": "09:15",
+      "spot_price": 0.26995,
+      "total_price": 0.40642
+    },
+    {
+      "time": "09:30",
+      "spot_price": 0.25122,
+      "total_price": 0.3858
+    },
+    {
+      "time": "09:45",
+      "spot_price": 0.22142,
+      "total_price": 0.35298
+    },
+    {
+      "time": "10:00",
+      "spot_price": 0.24807,
+      "total_price": 0.38233
+    },
+    {
+      "time": "10:15",
+      "spot_price": 0.22,
+      "total_price": 0.35141
+    },
+    {
+      "time": "10:30",
+      "spot_price": 0.21833,
+      "total_price": 0.34957
+    },
+    {
+      "time": "10:45",
+      "spot_price": 0.21469,
+      "total_price": 0.34556
+    },
+    {
+      "time": "11:00",
+      "spot_price": 0.21345,
+      "total_price": 0.3442
+    },
+    {
+      "time": "11:15",
+      "spot_price": 0.21105,
+      "total_price": 0.34155
+    },
+    {
+      "time": "11:30",
+      "spot_price": 0.21287,
+      "total_price": 0.34356
+    },
+    {
+      "time": "11:45",
+      "spot_price": 0.20659,
+      "total_price": 0.33664
+    },
+    {
+      "time": "12:00",
+      "spot_price": 0.20807,
+      "total_price": 0.33827
+    },
+    {
+      "time": "12:15",
+      "spot_price": 0.2048,
+      "total_price": 0.33467
+    },
+    {
+      "time": "12:30",
+      "spot_price": 0.20642,
+      "total_price": 0.33646
+    },
+    {
+      "time": "12:45",
+      "spot_price": 0.20586,
+      "total_price": 0.33584
+    },
+    {
+      "time": "13:00",
+      "spot_price": 0.20945,
+      "total_price": 0.33979
+    },
+    {
+      "time": "13:15",
+      "spot_price": 0.211,
+      "total_price": 0.3415
+    },
+    {
+      "time": "13:30",
+      "spot_price": 0.20403,
+      "total_price": 0.33382
+    },
+    {
+      "time": "13:45",
+      "spot_price": 0.20356,
+      "total_price": 0.33331
+    },
+    {
+      "time": "14:00",
+      "spot_price": 0.20156,
+      "total_price": 0.3311
+    },
+    {
+      "time": "14:15",
+      "spot_price": 0.21021,
+      "total_price": 0.34063
+    },
+    {
+      "time": "14:30",
+      "spot_price": 0.23418,
+      "total_price": 0.36703
+    },
+    {
+      "time": "14:45",
+      "spot_price": 0.27243,
+      "total_price": 0.40915
+    },
+    {
+      "time": "15:00",
+      "spot_price": 0.25013,
+      "total_price": 0.38459
+    },
+    {
+      "time": "15:15",
+      "spot_price": 0.28823,
+      "total_price": 0.42656
+    },
+    {
+      "time": "15:30",
+      "spot_price": 0.30236,
+      "total_price": 0.44212
+    },
+    {
+      "time": "15:45",
+      "spot_price": 0.32912,
+      "total_price": 0.47159
+    },
+    {
+      "time": "16:00",
+      "spot_price": 0.30893,
+      "total_price": 0.44935
+    },
+    {
+      "time": "16:15",
+      "spot_price": 0.33862,
+      "total_price": 0.48205
+    },
+    {
+      "time": "16:30",
+      "spot_price": 0.34772,
+      "total_price": 0.49207
+    },
+    {
+      "time": "16:45",
+      "spot_price": 0.34533,
+      "total_price": 0.48944
+    },
+    {
+      "time": "17:00",
+      "spot_price": 0.35298,
+      "total_price": 0.49787
+    },
+    {
+      "time": "17:15",
+      "spot_price": 0.35216,
+      "total_price": 0.49696
+    },
+    {
+      "time": "17:30",
+      "spot_price": 0.34875,
+      "total_price": 0.49321
+    },
+    {
+      "time": "17:45",
+      "spot_price": 0.34774,
+      "total_price": 0.4921
+    },
+    {
+      "time": "18:00",
+      "spot_price": 0.34969,
+      "total_price": 0.49424
+    },
+    {
+      "time": "18:15",
+      "spot_price": 0.34812,
+      "total_price": 0.49252
+    },
+    {
+      "time": "18:30",
+      "spot_price": 0.34918,
+      "total_price": 0.49368
+    },
+    {
+      "time": "18:45",
+      "spot_price": 0.34152,
+      "total_price": 0.48525
+    },
+    {
+      "time": "19:00",
+      "spot_price": 0.34978,
+      "total_price": 0.49434
+    },
+    {
+      "time": "19:15",
+      "spot_price": 0.34428,
+      "total_price": 0.48829
+    },
+    {
+      "time": "19:30",
+      "spot_price": 0.33882,
+      "total_price": 0.48227
+    },
+    {
+      "time": "19:45",
+      "spot_price": 0.33186,
+      "total_price": 0.47461
+    },
+    {
+      "time": "20:00",
+      "spot_price": 0.33366,
+      "total_price": 0.47659
+    },
+    {
+      "time": "20:15",
+      "spot_price": 0.33147,
+      "total_price": 0.47418
+    },
+    {
+      "time": "20:30",
+      "spot_price": 0.31357,
+      "total_price": 0.45446
+    },
+    {
+      "time": "20:45",
+      "spot_price": 0.30544,
+      "total_price": 0.44551
+    },
+    {
+      "time": "21:00",
+      "spot_price": 0.30829,
+      "total_price": 0.44865
+    },
+    {
+      "time": "21:15",
+      "spot_price": 0.29696,
+      "total_price": 0.43617
+    },
+    {
+      "time": "21:30",
+      "spot_price": 0.29431,
+      "total_price": 0.43325
+    },
+    {
+      "time": "21:45",
+      "spot_price": 0.28255,
+      "total_price": 0.4203
+    },
+    {
+      "time": "22:00",
+      "spot_price": 0.28525,
+      "total_price": 0.42327
+    },
+    {
+      "time": "22:15",
+      "spot_price": 0.27589,
+      "total_price": 0.41297
+    },
+    {
+      "time": "22:30",
+      "spot_price": 0.27428,
+      "total_price": 0.41119
+    },
+    {
+      "time": "22:45",
+      "spot_price": 0.26037,
+      "total_price": 0.39587
+    },
+    {
+      "time": "23:00",
+      "spot_price": 0.25939,
+      "total_price": 0.39479
+    },
+    {
+      "time": "23:15",
+      "spot_price": 0.25268,
+      "total_price": 0.3874
+    },
+    {
+      "time": "23:30",
+      "spot_price": 0.2491,
+      "total_price": 0.38346
+    },
+    {
+      "time": "23:45",
+      "spot_price": 0.23812,
+      "total_price": 0.37137
+    }
+  ],
+  "tomorrow": []
+}
