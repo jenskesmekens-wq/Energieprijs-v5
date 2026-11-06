@@ -110,3 +110,19 @@ canvas{
         font-size:26px;
     }
 }
+
+.good{
+    background:#c8f7c5;
+}
+
+.warning{
+    background:#fff7bf;
+}
+
+.bad{
+    background:#ffc9c9;
+}
+
+#priceChart{
+    height:400px !important;
+}

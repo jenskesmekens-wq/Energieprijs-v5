@@ -1,3 +1,37 @@
+function getClass(price){
+
+    const prices =
+        window.dayPrices.slice().sort(
+            (a,b) =>
+            a.total_price -
+            b.total_price
+        );
+
+    const rank =
+        prices.findIndex(
+            p =>
+            p.total_price === price
+        );
+
+    const pct =
+        (
+            rank /
+            prices.length
+        ) * 100;
+
+    if(pct <= 20){
+
+        return "good";
+    }
+
+    if(pct <= 70){
+
+        return "warning";
+    }
+
+    return "bad";
+}
+
 async function loadDashboard(){
 
     const response =
@@ -7,6 +41,9 @@ async function loadDashboard(){
 
     const data =
         await response.json();
+
+    window.dayPrices =
+        data.today;
 
     document
     .querySelectorAll(".tab")
@@ -51,71 +88,114 @@ async function loadDashboard(){
     ).innerHTML = `
 
 <div class="card">
-<div>⚡ Actuele prijs</div>
+
+<div>
+⚡ Actuele prijs
+</div>
+
 <div class="big">
 €${data.current_price.toFixed(3)}
 </div>
+
 </div>
 
 <div class="card">
-<div>🥇 Goedkoopste kwartier</div>
+
+<div>
+🥇 Goedkoopste kwartier
+</div>
+
 <div class="big">
 ${data.cheapest_quarter_today.time}
 </div>
+
 <div>
 €${data.cheapest_quarter_today.total_price.toFixed(3)}
 </div>
+
 </div>
 
 <div class="card">
-<div>🥇 Goedkoopste uur</div>
+
+<div>
+🥇 Goedkoopste uur
+</div>
+
 <div class="big">
 ${data.cheapest_hour_today.hour}
 </div>
+
 <div>
 €${data.cheapest_hour_today.price.toFixed(3)}
 </div>
+
 </div>
 
 <div class="card">
-<div>🚗 Beste 2 uur</div>
+
+<div>
+🚗 Beste 2 uur
+</div>
+
 <div class="big">
+
 ${data.best_2h_window.from}
 →
 ${data.best_2h_window.to}
+
 </div>
+
 <div>
 €${data.best_2h_window.average.toFixed(3)}
 </div>
+
 </div>
 
 <div class="card">
-<div>🚗 Beste 4 uur</div>
+
+<div>
+🚗 Beste 4 uur
+</div>
+
 <div class="big">
+
 ${data.best_4h_window.from}
 →
 ${data.best_4h_window.to}
+
 </div>
+
 <div>
 €${data.best_4h_window.average.toFixed(3)}
 </div>
+
 </div>
 
 <div class="card">
-<div>🚗 Beste 6 uur</div>
+
+<div>
+🚗 Beste 6 uur
+</div>
+
 <div class="big">
+
 ${data.best_6h_window.from}
 →
 ${data.best_6h_window.to}
+
 </div>
+
 <div>
 €${data.best_6h_window.average.toFixed(3)}
 </div>
+
 </div>
 
 <div class="card">
 
-<div>📅 Morgen</div>
+<div>
+📅 Morgen
+</div>
 
 <div class="big">
 
@@ -145,8 +225,12 @@ ${
             tbody.innerHTML += `
             <tr>
                 <td>${row.time}</td>
-                <td>€${row.spot_price.toFixed(3)}</td>
-                <td>€${row.total_price.toFixed(3)}</td>
+                <td>
+                    €${row.spot_price.toFixed(3)}
+                </td>
+                <td class="${getClass(row.total_price)}">
+                    €${row.total_price.toFixed(3)}
+                </td>
             </tr>
             `;
         }
@@ -195,8 +279,12 @@ ${
                 html += `
                 <tr>
                     <td>${row.time}</td>
-                    <td>€${row.spot_price.toFixed(3)}</td>
-                    <td>€${row.total_price.toFixed(3)}</td>
+                    <td>
+                    €${row.spot_price.toFixed(3)}
+                    </td>
+                    <td class="${getClass(row.total_price)}">
+                    €${row.total_price.toFixed(3)}
+                    </td>
                 </tr>
                 `;
             }
@@ -214,25 +302,26 @@ ${
         .innerHTML = html;
     }
 
-    new Chart(
-
+    const ctx =
         document.getElementById(
             "priceChart"
-        ),
+        );
 
+    new Chart(
+        ctx,
         {
-
             type:"line",
 
             data:{
 
                 labels:
                 data.today.map(
-                    x => x.time
+                    x =>
+                    x.time
                 ),
 
-                datasets:[
-                {
+                datasets:[{
+
                     label:
                     "Werkelijke prijs €/kWh",
 
@@ -242,8 +331,17 @@ ${
                         x.total_price
                     ),
 
-                    borderWidth:2
+                    borderWidth:3,
+
+                    tension:0.3
                 }]
+            },
+
+            options:{
+
+                responsive:true,
+
+                maintainAspectRatio:false
             }
         }
     );
