@@ -8,10 +8,13 @@
     "total_price": 0.19906
   },
   "cheapest_hour_today": {
-    "hour": "04:00",
-    "price": 0.23292
+    "hour": "11:00",
+    "price": 0.20377
   },
-  "cheapest_hour_tomorrow": null,
+  "cheapest_hour_tomorrow": {
+    "hour": "03:00",
+    "price": 0.21995
+  },
   "best_2h_window": {
     "from": "10:30",
     "to": "12:30",
@@ -27,7 +30,11 @@
     "to": "14:15",
     "average": 0.21374
   },
-  "best_3h_window_tomorrow": null,
+  "best_3h_window_tomorrow": {
+    "from": "02:00",
+    "to": "05:00",
+    "average": 0.22375
+  },
   "today": [
     {
       "time": "00:00",
@@ -508,7 +515,9 @@
       "time": "23:45",
       "spot_price": 0.10843,
       "total_price": 0.22853
-    },
+    }
+  ],
+  "tomorrow": [
     {
       "time": "00:00",
       "spot_price": 0.14624,
@@ -989,6 +998,5 @@
       "spot_price": 0.18054,
       "total_price": 0.30795
     }
-  ],
-  "tomorrow": []
+  ]
 }

@@ -233,39 +233,21 @@ with open(
     prices = json.load(f)
 
 
-today_data = (
-    prices
-    .get("today", {})
-    .get("data", [])
+all_prices = (
+    prices["today"]["data"]
 )
 
-tomorrow_section = (
-    prices.get(
-        "tomorrow"
-    )
-)
+today_data = [
+    p
+    for p in all_prices
+    if p["day"] == "today"
+]
 
-if (
-    tomorrow_section
-    and
-    isinstance(
-        tomorrow_section,
-        dict
-    )
-):
-
-    tomorrow_data = (
-        tomorrow_section
-        .get(
-            "data",
-            []
-        )
-    )
-
-else:
-
-    tomorrow_data = []
-
+tomorrow_data = [
+    p
+    for p in all_prices
+    if p["day"] == "tomorrow"
+]
 
 today = (
     transform_prices(
