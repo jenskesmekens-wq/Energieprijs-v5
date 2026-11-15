@@ -8,7 +8,6 @@ from pricing import (
     engie_total_price
 )
 
-
 PRICE_FILE = Path(
     "docs/prices.json"
 )
@@ -136,10 +135,8 @@ def find_best_window(
 
     for i in range(
         len(data)
-        -
-        quarter_count
-        +
-        1
+        - quarter_count
+        + 1
     ):
 
         window = (
@@ -195,7 +192,10 @@ def transform_prices(data):
 
         utc_time = datetime.fromisoformat(
             item["timestamp"]
-            .replace("Z", "+00:00")
+            .replace(
+                "Z",
+                "+00:00"
+            )
         )
 
         local_time = (
@@ -220,7 +220,6 @@ def transform_prices(data):
             engie_total_price(
                 item["price_eur_kwh"]
             )
-
         })
 
     return result
@@ -241,7 +240,9 @@ today_data = (
 )
 
 tomorrow_section = (
-    prices.get("tomorrow")
+    prices.get(
+        "tomorrow"
+    )
 )
 
 if (
@@ -255,7 +256,10 @@ if (
 
     tomorrow_data = (
         tomorrow_section
-        .get("data", [])
+        .get(
+            "data",
+            []
+        )
     )
 
 else:
@@ -283,7 +287,24 @@ current_price = (
     )
 )
 
+today_date = (
+    datetime.now()
+    .strftime("%d/%m/%Y")
+)
+
+tomorrow_date = (
+    datetime.now()
+    +
+    timedelta(days=1)
+).strftime("%d/%m/%Y")
+
 dashboard = {
+
+    "today_date":
+    today_date,
+
+    "tomorrow_date":
+    tomorrow_date,
 
     "current_price":
     round(
@@ -322,6 +343,12 @@ dashboard = {
     find_best_window(
         today,
         24
+    ),
+
+    "best_3h_window_tomorrow":
+    find_best_window(
+        tomorrow,
+        12
     ),
 
     "today":

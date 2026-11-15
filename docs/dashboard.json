@@ -1,4 +1,6 @@
 {
+  "today_date": "15/11/2026",
+  "tomorrow_date": "16/11/2026",
   "current_price": 0.33361,
   "cheapest_quarter_today": {
     "time": "05:30",
@@ -25,6 +27,7 @@
     "to": "06:00",
     "average": 0.33209
   },
+  "best_3h_window_tomorrow": null,
   "today": [
     {
       "time": "00:00",

@@ -1,35 +1,50 @@
-function getClass(price){
+function buildRankingClasses(prices){
 
-    const prices =
-        window.dayPrices.slice().sort(
+    const sorted =
+        [...prices]
+        .sort(
             (a,b) =>
             a.total_price -
             b.total_price
         );
 
-    const rank =
-        prices.findIndex(
-            p =>
-            p.total_price === price
-        );
+    const map = {};
 
-    const pct =
-        (
-            rank /
-            prices.length
-        ) * 100;
+    sorted.forEach(
+        (row,index) => {
 
-    if(pct <= 20){
+            const pct =
+                (
+                    index /
+                    sorted.length
+                ) * 100;
 
-        return "good";
-    }
+            const key =
+                row.time +
+                "_" +
+                row.total_price;
 
-    if(pct <= 70){
+            if(pct <= 20){
 
-        return "warning";
-    }
+                map[key] =
+                    "good";
+            }
+            else if(
+                pct <= 70
+            ){
 
-    return "bad";
+                map[key] =
+                    "warning";
+            }
+            else{
+
+                map[key] =
+                    "bad";
+            }
+        }
+    );
+
+    return map;
 }
 
 async function loadDashboard(){
@@ -42,8 +57,15 @@ async function loadDashboard(){
     const data =
         await response.json();
 
-    window.dayPrices =
-        data.today;
+    const todayClasses =
+        buildRankingClasses(
+            data.today
+        );
+
+    const tomorrowClasses =
+        buildRankingClasses(
+            data.tomorrow || []
+        );
 
     document
     .querySelectorAll(".tab")
@@ -88,126 +110,95 @@ async function loadDashboard(){
     ).innerHTML = `
 
 <div class="card">
-
-<div>
-⚡ Actuele prijs
-</div>
-
+<div>⚡ Actuele prijs</div>
 <div class="big">
 €${data.current_price.toFixed(3)}
 </div>
-
 </div>
 
 <div class="card">
-
-<div>
-🥇 Goedkoopste kwartier
-</div>
-
+<div>🥇 Goedkoopste kwartier</div>
 <div class="big">
 ${data.cheapest_quarter_today.time}
 </div>
-
 <div>
 €${data.cheapest_quarter_today.total_price.toFixed(3)}
 </div>
-
 </div>
 
 <div class="card">
-
-<div>
-🥇 Goedkoopste uur
-</div>
-
+<div>🥇 Goedkoopste uur</div>
 <div class="big">
 ${data.cheapest_hour_today.hour}
 </div>
-
 <div>
 €${data.cheapest_hour_today.price.toFixed(3)}
 </div>
-
 </div>
 
 <div class="card">
-
-<div>
-🚗 Beste 2 uur
-</div>
-
+<div>🚗 Beste 2 uur</div>
 <div class="big">
-
 ${data.best_2h_window.from}
 →
 ${data.best_2h_window.to}
-
 </div>
-
 <div>
 €${data.best_2h_window.average.toFixed(3)}
 </div>
-
 </div>
 
 <div class="card">
-
-<div>
-🚗 Beste 4 uur
-</div>
-
+<div>🚗 Beste 4 uur</div>
 <div class="big">
-
 ${data.best_4h_window.from}
 →
 ${data.best_4h_window.to}
-
 </div>
-
 <div>
 €${data.best_4h_window.average.toFixed(3)}
 </div>
-
 </div>
 
 <div class="card">
-
-<div>
-🚗 Beste 6 uur
-</div>
-
+<div>🚗 Beste 6 uur</div>
 <div class="big">
-
 ${data.best_6h_window.from}
 →
 ${data.best_6h_window.to}
-
 </div>
-
 <div>
 €${data.best_6h_window.average.toFixed(3)}
 </div>
-
 </div>
 
 <div class="card">
 
 <div>
-📅 Morgen
+📅 Beste 3 uur morgen
 </div>
-
-<div class="big">
 
 ${
-    data.cheapest_hour_tomorrow
+    data.best_3h_window_tomorrow
     ?
-    data.cheapest_hour_tomorrow.hour
-    :
-    "Nog niet beschikbaar"
-}
+    `
+    <div class="big">
+    ${data.best_3h_window_tomorrow.from}
+    →
+    ${data.best_3h_window_tomorrow.to}
+    </div>
 
-</div>
+    <div>
+    €${data.best_3h_window_tomorrow.average.toFixed(3)}
+    </div>
+    `
+    :
+    `
+    <div class="big">
+    Nog niet beschikbaar
+    </div>
+    `
+}
 
 </div>
 `;
@@ -217,22 +208,37 @@ ${
             "#today-table tbody"
         );
 
-    tbody.innerHTML = "";
+    tbody.innerHTML = `
+<tr>
+<td colspan="3">
+📅 ${data.today_date}
+</td>
+</tr>
+`;
 
     data.today.forEach(
         row => {
 
+            const key =
+                row.time +
+                "_" +
+                row.total_price;
+
             tbody.innerHTML += `
-            <tr>
-                <td>${row.time}</td>
-                <td>
-                    €${row.spot_price.toFixed(3)}
-                </td>
-                <td class="${getClass(row.total_price)}">
-                    €${row.total_price.toFixed(3)}
-                </td>
-            </tr>
-            `;
+<tr>
+<td>${row.time}</td>
+
+<td>
+€${row.spot_price.toFixed(3)}
+</td>
+
+<td class="${
+    todayClasses[key]
+}">
+€${row.total_price.toFixed(3)}
+</td>
+</tr>
+`;
         }
     );
 
@@ -247,53 +253,72 @@ ${
         )
         .innerHTML = `
 
-        <div class="card">
+<div class="card">
 
-        Morgenprijzen zijn
-        nog niet beschikbaar.
+<h3>
+📅 ${data.tomorrow_date}
+</h3>
 
-        </div>
-        `;
+Prijzen voor morgen
+zijn nog niet beschikbaar.
+
+</div>
+`;
     }
     else{
 
         let html = `
-        <table>
 
-        <thead>
+<h3>
+📅 ${data.tomorrow_date}
+</h3>
 
-        <tr>
-        <th>Tijd</th>
-        <th>Spotprijs</th>
-        <th>Werkelijke prijs</th>
-        </tr>
+<table>
 
-        </thead>
+<thead>
 
-        <tbody>
-        `;
+<tr>
+<th>Tijd</th>
+<th>Spotprijs</th>
+<th>Werkelijke prijs</th>
+</tr>
+
+</thead>
+
+<tbody>
+`;
 
         data.tomorrow.forEach(
             row => {
 
+                const key =
+                    row.time +
+                    "_" +
+                    row.total_price;
+
                 html += `
-                <tr>
-                    <td>${row.time}</td>
-                    <td>
-                    €${row.spot_price.toFixed(3)}
-                    </td>
-                    <td class="${getClass(row.total_price)}">
-                    €${row.total_price.toFixed(3)}
-                    </td>
-                </tr>
-                `;
+<tr>
+<td>${row.time}</td>
+
+<td>
+€${row.spot_price.toFixed(3)}
+</td>
+
+<td class="${
+    tomorrowClasses[key]
+}">
+€${row.total_price.toFixed(3)}
+</td>
+
+</tr>
+`;
             }
         );
 
         html += `
-        </tbody>
-        </table>
-        `;
+</tbody>
+</table>
+`;
 
         document
         .getElementById(
@@ -302,13 +327,13 @@ ${
         .innerHTML = html;
     }
 
-    const ctx =
+    const chart =
         document.getElementById(
             "priceChart"
         );
 
     new Chart(
-        ctx,
+        chart,
         {
             type:"line",
 
@@ -316,8 +341,7 @@ ${
 
                 labels:
                 data.today.map(
-                    x =>
-                    x.time
+                    x => x.time
                 ),
 
                 datasets:[{
