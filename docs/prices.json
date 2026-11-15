@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T14:15:04.205084+00:00",
+  "updated_at": "2026-11-15T14:56:32.852679+00:00",
   "current": {
     "success": true,
     "current": {
@@ -14,7 +14,7 @@
       "is_negative": false,
       "price_category": "expensive"
     },
-    "timestamp": "2026-11-15T14:15:03.976Z"
+    "timestamp": "2026-11-15T14:56:32.503Z"
   },
   "today": {
     "success": true,
@@ -2339,7 +2339,7 @@
         "negative_hours": 0
       }
     },
-    "fetched_at": "2026-11-15T14:15:04.162Z"
+    "fetched_at": "2026-11-15T14:56:32.795Z"
   },
   "tomorrow": null
 }
