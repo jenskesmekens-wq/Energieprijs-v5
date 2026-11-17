@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-17T19:54:44.673412+00:00",
+  "updated_at": "2026-11-17T20:42:43.224330+00:00",
   "current": {
     "success": true,
     "current": {
-      "timestamp": "2026-11-17T19:00:00.000Z",
-      "price_eur_mwh": 188.08,
-      "price_eur_kwh": 0.18808,
+      "timestamp": "2026-11-17T20:00:00.000Z",
+      "price_eur_mwh": 181.41,
+      "price_eur_kwh": 0.18141,
       "source": "Energy-Charts",
       "day": "today",
-      "hour": 20,
-      "hour_label": "20:00",
+      "hour": 21,
+      "hour_label": "21:00",
       "is_current": true,
       "is_negative": false,
       "price_category": "peak"
     },
-    "timestamp": "2026-11-17T19:54:43.972Z"
+    "timestamp": "2026-11-17T20:42:42.720Z"
   },
   "today": {
     "success": true,
@@ -988,7 +988,7 @@
         "day": "today",
         "hour": 20,
         "hour_label": "20:00",
-        "is_current": true,
+        "is_current": false,
         "is_negative": false,
         "price_category": "peak"
       },
@@ -1000,7 +1000,7 @@
         "day": "today",
         "hour": 20,
         "hour_label": "20:00",
-        "is_current": true,
+        "is_current": false,
         "is_negative": false,
         "price_category": "peak"
       },
@@ -1012,7 +1012,7 @@
         "day": "today",
         "hour": 20,
         "hour_label": "20:00",
-        "is_current": true,
+        "is_current": false,
         "is_negative": false,
         "price_category": "peak"
       },
@@ -1024,7 +1024,7 @@
         "day": "today",
         "hour": 20,
         "hour_label": "20:00",
-        "is_current": true,
+        "is_current": false,
         "is_negative": false,
         "price_category": "peak"
       },
@@ -1036,7 +1036,7 @@
         "day": "today",
         "hour": 21,
         "hour_label": "21:00",
-        "is_current": false,
+        "is_current": true,
         "is_negative": false,
         "price_category": "peak"
       },
@@ -1048,7 +1048,7 @@
         "day": "today",
         "hour": 21,
         "hour_label": "21:00",
-        "is_current": false,
+        "is_current": true,
         "is_negative": false,
         "price_category": "peak"
       },
@@ -1060,7 +1060,7 @@
         "day": "today",
         "hour": 21,
         "hour_label": "21:00",
-        "is_current": false,
+        "is_current": true,
         "is_negative": false,
         "price_category": "peak"
       },
@@ -1072,7 +1072,7 @@
         "day": "today",
         "hour": 21,
         "hour_label": "21:00",
-        "is_current": false,
+        "is_current": true,
         "is_negative": false,
         "price_category": "expensive"
       },
@@ -2339,7 +2339,7 @@
         "negative_hours": 0
       }
     },
-    "fetched_at": "2026-11-17T19:54:44.539Z"
+    "fetched_at": "2026-11-17T20:42:43.098Z"
   },
   "tomorrow": null
 }
