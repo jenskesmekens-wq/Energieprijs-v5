@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-18T00:31:23.429142+00:00",
+  "updated_at": "2026-11-18T01:57:20.874058+00:00",
   "current": {
     "success": true,
     "current": {
-      "timestamp": "2026-11-18T00:00:00.000Z",
-      "price_eur_mwh": 87.12,
-      "price_eur_kwh": 0.08712,
+      "timestamp": "2026-11-18T01:00:00.000Z",
+      "price_eur_mwh": 72.48,
+      "price_eur_kwh": 0.07248,
       "source": "Energy-Charts",
       "day": "today",
-      "hour": 1,
-      "hour_label": "01:00",
+      "hour": 2,
+      "hour_label": "02:00",
       "is_current": true,
       "is_negative": false,
       "price_category": "cheap"
     },
-    "timestamp": "2026-11-18T00:31:23.149Z"
+    "timestamp": "2026-11-18T01:57:20.466Z"
   },
   "today": {
     "success": true,
@@ -76,7 +76,7 @@
         "day": "today",
         "hour": 1,
         "hour_label": "01:00",
-        "is_current": true,
+        "is_current": false,
         "is_negative": false,
         "price_category": "cheap"
       },
@@ -88,7 +88,7 @@
         "day": "today",
         "hour": 1,
         "hour_label": "01:00",
-        "is_current": true,
+        "is_current": false,
         "is_negative": false,
         "price_category": "cheap"
       },
@@ -100,7 +100,7 @@
         "day": "today",
         "hour": 1,
         "hour_label": "01:00",
-        "is_current": true,
+        "is_current": false,
         "is_negative": false,
         "price_category": "cheap"
       },
@@ -112,7 +112,7 @@
         "day": "today",
         "hour": 1,
         "hour_label": "01:00",
-        "is_current": true,
+        "is_current": false,
         "is_negative": false,
         "price_category": "cheap"
       },
@@ -124,7 +124,7 @@
         "day": "today",
         "hour": 2,
         "hour_label": "02:00",
-        "is_current": false,
+        "is_current": true,
         "is_negative": false,
         "price_category": "cheap"
       },
@@ -136,7 +136,7 @@
         "day": "today",
         "hour": 2,
         "hour_label": "02:00",
-        "is_current": false,
+        "is_current": true,
         "is_negative": false,
         "price_category": "cheap"
       },
@@ -148,7 +148,7 @@
         "day": "today",
         "hour": 2,
         "hour_label": "02:00",
-        "is_current": false,
+        "is_current": true,
         "is_negative": false,
         "price_category": "cheap"
       },
@@ -160,7 +160,7 @@
         "day": "today",
         "hour": 2,
         "hour_label": "02:00",
-        "is_current": false,
+        "is_current": true,
         "is_negative": false,
         "price_category": "cheap"
       },
@@ -1182,7 +1182,7 @@
       },
       "tomorrow": null
     },
-    "fetched_at": "2026-11-18T00:31:23.361Z"
+    "fetched_at": "2026-11-18T01:57:20.650Z"
   },
   "tomorrow": null
 }
